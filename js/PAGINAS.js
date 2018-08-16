@@ -1,4 +1,4 @@
-var PAGINAS = PAGINAS || [
+var PAGINAS = [
     //os htmls que vc vai usar vão ficar aqui
     "home",
     "pesquisar"
