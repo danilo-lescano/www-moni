@@ -1,7 +1,12 @@
-var PAGINAS = [
-    //os htmls que vc vai usar vão ficar aqui
+var PAGINAS = PAGINAS || [
+    //os htmls  vão ficar aqui
     "home",
-    "pesquisar"
+    "pesquisar",
+    "criar-conta",
+    "perfil",
+    "registrar-monitoria",
+    "ver-monitoria",
+    "perfil-editar"
 ];
 PAGINAS.loadPages = function () {
 	//carregar todas as paginas de html no PAGINAS msm
@@ -20,4 +25,9 @@ PAGINAS.loadPages = function () {
 		xhr.send();
 	}
 };
+PAGINAS.carregarView = function(pagina){
+	if(PAGINAS[pagina] !== undefined){
+		document.getElementById("corpo").innerHTML = PAGINAS[pagina];
+	}
+}
 PAGINAS.loadPages();
