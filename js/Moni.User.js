@@ -1,4 +1,7 @@
 var Moni = Moni || {};
+Moni.User = {};
+
+/*
 	imagemId,
 	nomeCompleto,
 	email,
@@ -11,6 +14,4 @@ var Moni = Moni || {};
 	pontosDominio,
 	pontosEmpatia,
 	pontosPontualidade
-Moni.User = {
-
-};
+*/

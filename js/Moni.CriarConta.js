@@ -1,47 +1,27 @@
 var Moni = Moni || {};
 Moni.CriarConta = {
 	salvarUsuarioNovo: function(){
+		var modal = document.getElementById("modalLoad");
+		modal.style.display = "block";
 
-			var modal = document.getElementById("modalLoad");
-			modal.style.display = "block";
-
-			function validarEmail(email){
-			var usuario = email.substring(0, email.indexOf("@"));
-			var dominio = email.substring(email.indexOf("@")+ 1, email.length);
- 
-			if ((usuario.length >=1) &&
-			    (dominio.length >=3) && 
-			    (usuario.search("@")==-1) && 
-			    (dominio.search("@")==-1) &&
-			    (usuario.search(" ")==-1) && 
-			    (dominio.search(" ")==-1) &&
-			    (dominio.search(".")!=-1) &&      
-			    (dominio.indexOf(".") >=1)&& 
-			    (dominio.lastIndexOf(".") < dominio.length - 1)) {
-   				 return true;
-			}
-			return false;
-		}
 		var _email = document.getElementById("email").value;
+		var _senha = document.getElementById("senha").value;
 		var _nomeCompleto = document.getElementById("nomeCompleto").value;
 		var _curso = document.getElementById("curso").value;
 		var _semestre = document.getElementById("semestre").value;
 		var _monitor = document.getElementById("monitor").checked;
-		var _disciplina;
-		var _diaSemana;
-		var _horario;
+		var _disciplina, _diaSemana, _horario;
 		if (_monitor == true ){
 			 _disciplina = document.getElementById("disciplina").value;
 			 _diaSemana = document.getElementById("diaSemana").value;
 			 _horario = document.getElementById("horario").value;
-
 		} else {
 			 _disciplina = "";
 			 _diaSemana ="";
 			 _horario = "";
 		}
 
-		if (!validarEmail(_email)){
+		if (!Moni.Geral.validarEmail(_email)){
 			modal.style.display = "none";
 			Moni.Geral.mostrarSnack("Email inválido");
 			return;
@@ -51,6 +31,7 @@ Moni.CriarConta = {
 			tipo: "criarConta",
 			user:{
 				nomeCompleto: _nomeCompleto,
+				senha: _senha,
 				email: _email,
 				curso: _curso,
 				semestre: _semestre,
@@ -68,14 +49,12 @@ Moni.CriarConta = {
 			if (resposta.ok) {
 				modal.style.display = "none";
 				Moni.Geral.mostrarSnack("Sua conta foi criada!");
-				Moni.index.carregarView('pesquisar');
+				Moni.Geral.carregarView('pesquisar');
 			}
 			else{
 				modal.style.display = "none";
 				alert("-");
 			}
-
-			
 		},
 		function(){
 			modal.style.display = "none";
@@ -96,7 +75,6 @@ Moni.CriarConta = {
 	
 	},
 	checkClicado: function(checkbox){
-		
 		var label = document.getElementsByClassName("hidden-label");
 		var inputCheck = document.getElementsByClassName("escondido");
 
@@ -113,5 +91,4 @@ Moni.CriarConta = {
 			}
     	}
    },
-	
 }
