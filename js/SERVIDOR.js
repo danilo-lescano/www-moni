@@ -3,13 +3,13 @@ var SERVIDOR = SERVIDOR || {
 		let xhr = new XMLHttpRequest();
 		var params = parametros;
 		var tempo = Date.now();
-		/**************/
+
 		parametros = "http://localhost:8010/" + JSON.stringify(parametros);
 		xhr.onload = function() {
 			callback(Moni.Geral.tryParseJSON(xhr.response));
 		};
 		xhr.onerror = function() {
-			//callbackErro();
+			callbackErro();
 		};
 		xhr.open("GET", parametros);
 		xhr.send();
@@ -53,7 +53,7 @@ var SERVIDOR = SERVIDOR || {
 			}
 			callback(resposta);
 		}
-		setTimeout(teste,1000);
+		//setTimeout(teste,1000);
 	}
 }
 // /***********************************************************************

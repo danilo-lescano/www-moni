@@ -53,7 +53,7 @@ Moni.CriarConta = {
 			}
 			else{
 				modal.style.display = "none";
-				alert("-");
+				alert("Email já cadastrado");
 			}
 		},
 		function(){
