@@ -24,7 +24,7 @@ Moni.Homepage = {
 		function(resposta){
 			modal.style.display = "none";
 			if (resposta.existe) {
-				Moni.User = resposta.User;
+				Moni.User = resposta.user;
 				PAGINAS.carregarView('pesquisar');
 			}
 			else{

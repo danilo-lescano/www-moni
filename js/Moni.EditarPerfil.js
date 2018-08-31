@@ -64,7 +64,7 @@ Moni.EditarPerfil = {
 		editarPerfil,
 		function(resposta){
 			if (resposta.ok) {
-				Moni.User =  resposta.User;
+				Moni.User =  resposta.user;
 				modal.style.display = "none";
 				Moni.Geral.mostrarSnack("Perfil atualizado!");
 				Moni.Geral.carregarView('pesquisar');

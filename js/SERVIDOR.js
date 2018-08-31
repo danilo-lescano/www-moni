@@ -19,7 +19,7 @@ var SERVIDOR = SERVIDOR || {
 
 			if (x.tipo === "login") {
 				resposta.existe = true;
-				resposta.User = {
+				resposta.user = {
 					imagemId: 0,			nomeCompleto: "Thaís Lescano",	email: "thais@hotmail.com",
 					curso: "Informática",	semestre: "6",					monitor: true,
 					disciplina: "ingles",	diaSemana: "segunda e quinta",	horario: "16 às 17:30",

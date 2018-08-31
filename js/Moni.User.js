@@ -5,6 +5,7 @@ Moni.User = {};
 	imagemId,
 	nomeCompleto,
 	email,
+	senha,
 	curso,
 	semestre,
 	monitor,
